@@ -1,18 +1,19 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>CityWeather</h1>
+    <Weather></Weather>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Weather from "./components/Weather";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
-  }
+    Weather,
+  },
 };
 </script>
 
@@ -22,7 +23,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #fafafa;
   margin-top: 60px;
+}
+
+html,
+body {
+  background-color: #004a7c;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 </style>
