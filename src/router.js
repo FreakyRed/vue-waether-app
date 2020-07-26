@@ -10,12 +10,12 @@ export function createRouter() {
       { path: "/", component: () => import("./components/Home.vue") },
       {
         path: "/cityweather",
-        component: () => import("./components/CityWeather.vue"),
+        component: () => import("./components/CityWeather.vue")
       },
       {
         path: "*",
-        component: () => import("./components/NotFoundComponent.vue"),
-      },
-    ],
+        component: () => import("./components/NotFoundComponent.vue")
+      }
+    ]
   });
 }

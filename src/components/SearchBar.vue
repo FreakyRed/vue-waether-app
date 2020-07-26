@@ -1,24 +1,32 @@
 <template>
-  <div class="searchbar">
-    <div>
-      <input
+  <v-container>
+    <v-container>
+      <v-text-field
         v-model="enteredValue"
-        type="text"
         placeholder="Enter your location"
+        rounded
+        outlined
+        clearable
+        type="text"
+        dark
+        class="mt-n4"
       />
-    </div>
-    <button type="submit" @click="emitSubmit">
-      Find your city
-    </button>
-    <button
-      v-if="atleastOneInList"
-      type="submit"
-      class="update"
-      @click="$emit('update-city')"
-    >
-      Update locations
-    </button>
-  </div>
+    </v-container>
+    <v-container class="mt-n6">
+      <v-btn dark type="submit" @click="emitSubmit">
+        Find your city
+      </v-btn>
+      <v-btn
+        dark
+        v-if="atleastOneInList"
+        type="submit"
+        class="ml-4"
+        @click="$emit('update-city')"
+      >
+        Update locations
+      </v-btn>
+    </v-container>
+  </v-container>
 </template>
 
 <script>
@@ -42,45 +50,15 @@ export default {
 </script>
 
 <style scoped>
-input[type="text"] {
-  border-style: solid;
-  border-width: 0.3rem;
-  border-color: #005691;
-  border-radius: 1rem;
-  width: 20rem;
-  height: 3rem;
-  font-size: 2rem;
+.v-text-field {
+  display: inline-block;
+  width: 50%;
   text-align: center;
-  color: #005691;
-  caret-color: transparent;
 }
 
-input[type="text"]:hover {
-  border-color: #e8f1f5;
-}
-
-input[type="text"]:focus::placeholder {
-  color: transparent;
-}
-
-button[type="submit"] {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: #005691;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bolder;
-  color: #fafafa;
-  transition-duration: 1s;
-}
-
-button[type="submit"]:hover {
-  background-color: #fafafa;
-  color: #005691;
-}
-
-.update {
-  margin-left: 1rem;
+@media only screen and(max-width: 600px) {
+  .v-text-field {
+    width: 400px;
+  }
 }
 </style>

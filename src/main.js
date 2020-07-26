@@ -4,6 +4,7 @@ import VueAxios from "vue-axios";
 import App from "./App.vue";
 
 import { createRouter } from "./router";
+import vuetify from "./plugins/vuetify";
 
 Vue.use(VueAxios, axios);
 
@@ -13,5 +14,6 @@ const router = createRouter();
 
 new Vue({
   router,
-  render: (h) => h(App),
+  vuetify,
+  render: h => h(App)
 }).$mount("#app");

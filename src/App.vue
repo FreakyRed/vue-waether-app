@@ -1,41 +1,44 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/"> Home </router-link>
-      <router-link to="/cityweather"> CityWeather </router-link>
-    </nav>
-    <transition name="fade" mode="out-in">
-      <router-view></router-view>
-    </transition>
-  </div>
+  <v-app>
+    <v-app-bar dense dark flat app>
+      <router-link to="/">
+        <v-btn color="blue darken-1" text>Home</v-btn>
+      </router-link>
+      <v-divider vertical inset class="mx-4"></v-divider>
+      <router-link to="cityWeather">
+        <v-btn color="blue darken-1" text>CityWeather</v-btn>
+      </router-link>
+    </v-app-bar>
+
+    <v-content id="content">
+      <v-container>
+        <v-row align="center">
+          <router-view></router-view>
+        </v-row>
+      </v-container>
+    </v-content>
+
+    <v-footer app> </v-footer>
+  </v-app>
 </template>
 
 <script>
 export default {
   name: "App",
+
+  data: () => ({
+    //
+  }),
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #fafafa;
-  margin-top: 60px;
+<style scoped>
+#content {
+  background-color: #212121;
 }
 
-html,
-body {
-  background-color: #004a7c;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
+.fade-enter-active .fade-leave-active {
+  transition: opacity 2s;
 }
 .fade-enter,
 .fade-leave-to {

@@ -1,12 +1,11 @@
 <template>
-  <div class="infoPanels">
+  <v-container id="container" class="mt-n6">
     <InfoPanel
-      class="infoPanel"
       :weatherObject="weatherObject"
       v-for="weatherObject in weatherObjects"
       :key="weatherObject.id"
     ></InfoPanel>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -24,11 +23,8 @@ export default {
 </script>
 
 <style scoped>
-.infoPanel {
-  margin-left: 2rem;
-}
-
-.infoPanels {
-  margin-left: -2rem;
+#container {
+  width: 100%;
+  display: flex;
 }
 </style>

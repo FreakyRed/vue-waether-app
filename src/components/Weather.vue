@@ -1,16 +1,18 @@
 <template>
-  <div class="weather">
+  <v-container>
     <SearchBar
       @submit-city="getWeatherInfo"
       @update-city="updateWeatherInfo"
       :atleastOneInList="atleastOneInList"
     ></SearchBar>
-    <div v-if="error">{{ errorMessage }}</div>
+    <v-container v-if="error" class="white--text">{{
+      errorMessage
+    }}</v-container>
     <LocationList
       v-if="atleastOneInList"
       :weatherObjects="weatherObjectsList"
     ></LocationList>
-  </div>
+  </v-container>
 </template>
 
 <script>

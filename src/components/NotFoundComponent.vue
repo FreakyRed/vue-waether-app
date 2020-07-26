@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "NotFoundComponent",
+  name: "NotFoundComponent"
 };
 </script>
 
